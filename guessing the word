@@ -1,0 +1,38 @@
+#guessing the word
+import random
+
+name = input("What is your name? ")
+
+print("Good Luck ! ", name)
+
+words = ['rainbow', 'computer', 'science', 'programming',
+         'python', 'mathematics', 'player', 'condition',
+         'reverse', 'water', 'board', 'geeks']
+
+word=random.choice(words)
+
+guesses=''
+counter=12
+
+while (counter>0):
+    failed=0
+    for i in word:
+        if i in guesses:
+            print(i,end='')
+        else:
+            print('_')
+            failed+=1
+
+    if failed == 0:
+        print("You Win")
+        print("The word is: ", word)
+        break
+
+    guess=input("Guess the character")
+    guesses+=guess
+
+    if guess not in word:
+        print("It is wrong")
+        counter-=1
+        if counter<1:
+            print("You lose")

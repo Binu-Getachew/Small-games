@@ -1,0 +1,46 @@
+import random
+print("Welcome to Rock paper Scissors game")
+print("The rule of this game is:\n"
+      + "Rock Vs Paper -> Paper wins\n"
+      + "Rock Vs Scissor -> Rock wins\n"
+      + "Paper Vs Scissor -> Scissor wins")
+options=["Rock","Paper","Scissor"]
+#word=random.choice(words)
+
+while True:
+    print("Please enter your choice:\n" \
+    + "1.Rock \n 2.Paper \n 3.Scissor")
+
+    user_choice=int(input("Please enter your choice:"))
+
+
+    while (user_choice<1 or user_choice>3):
+        choice = int(input('Enter a valid choice please ☺: '))
+    comp_choice=random.choice(options)
+    choice=options[user_choice-1]
+        
+    print("Your choice:",choice)
+    print("computer choice:",comp_choice)
+    
+    if (choice==comp_choice):
+        print("It is a tie")
+    elif (choice=='Rock' and comp_choice=='Paper'):
+        print("You lost")
+    elif (choice=='Rock' and comp_choice=='Scissor'):
+        print("You won")
+    elif (choice=='Paper' and comp_choice=='Rock'):
+        print("You won")
+    elif (choice=='Paper' and comp_choice=='Scissor'):
+        print("You lost")
+    elif (choice=='Scissor' and comp_choice=='paper'):
+        print("You won")
+    elif (choice=='Scissor' and comp_choice=='Rock'):
+        print("You lost")
+    else:
+        print("Something is wrong")
+
+    ans=input("DO YOU WANT TO PLAY AGAIN? Y/N").lower()
+    if (ans=='n'):
+        break
+
+print("Thank you for playing")

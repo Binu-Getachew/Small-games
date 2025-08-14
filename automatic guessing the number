@@ -1,0 +1,24 @@
+#guessing the number
+import random
+low = int(input("Enter the Lower Bound: "))
+high = int(input("Enter the Upper Bound: "))
+number=random.randint(low,high)
+
+lower_bound=low
+higher_bound=high
+
+guess=(higher_bound+lower_bound)//2
+
+counter=1
+print(f"\nHi! Welcome to the Number Guessing Game.You have 7 chances to guess the number between {low} and {high}. Let's start!")
+
+while ((counter<=7) & (guess!=number)):
+    if guess>number:
+        higher_bound=guess-1
+    else:
+        lower_bound=guess+1
+    guess=(higher_bound+lower_bound)//2
+    counter+=1
+
+print(f"Guessed number: {guess}")
+print("Generated number:",number)
